@@ -1,0 +1,21 @@
+{
+  "name": "projeto-final",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:roteirizando": "npm run dev -w roteirizando",
+    "dev:roteirizando-emails": "npm run dev -w roteirizando-emails",
+    "build:roteirizando": "npm run build -w roteirizando",
+    "start:roteirizando": "npm run start -w roteirizando",
+    "lint:roteirizando": "npm run lint -w roteirizando"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "packages/*",
+    "packages/roteirizando",
+    "packages/roteirizando-emails"
+  ]
+}
