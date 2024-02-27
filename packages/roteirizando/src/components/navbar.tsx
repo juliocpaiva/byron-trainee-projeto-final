@@ -1,6 +1,6 @@
 export const Navbar = () => {
   return (
-    <header className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0 md:h-16 px-6 md:px-20 py-8 md:py-0 border-b-neutral-200 border-b-[1px] fixed md:static w-full">
+    <header className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0 md:h-16 px-6 md:px-20 py-8 md:py-0 border-b-neutral-200 border-b-[1px] fixed md:static w-full bg-neutral-100">
       <img src="/roteirizando-logo.svg" alt="Roteirizando" />
       <nav className="w-full md:w-auto">
         <ul className="flex flex-row items-center justify-around gap-6 md:gap-10 w-full">
@@ -8,7 +8,7 @@ export const Navbar = () => {
             <Anchor href="/">Home</Anchor>
           </Li>
           <Li>
-            <Anchor href="/#roteiros">Roteiros</Anchor>
+            <Anchor href="/#itineraries">Roteiros</Anchor>
           </Li>
           <Li>
             <Anchor href="/#newsletter">Newsletter</Anchor>
@@ -30,7 +30,7 @@ const Li = (props: { children: React.ReactNode }) => {
 const Anchor = (props: { children: React.ReactNode; href: string }) => {
   return (
     <a
-      className="hover:opacity-60 transition-opacity duration-200"
+      className="hover:opacity-60 transition-opacity duration-200 text-sm font-sans font-medium text-neutral-700"
       href={props.href}
     >
       {props.children}
