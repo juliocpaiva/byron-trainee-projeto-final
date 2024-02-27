@@ -4,7 +4,12 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 
 export const HeroCarousel = () => {
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()]);
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [
+    Autoplay({
+      stopOnInteraction: false,
+      delay: 3000,
+    }),
+  ]);
   return (
     <div
       className="embla overflow-hidden md:hidden h-[340px] max-h-[340px] rounded-2xl"
