@@ -3,7 +3,7 @@ import { HeroCarousel } from "./hero-carousel";
 
 export const HeroSection = () => {
   return (
-    <div className="px-6 md:px-20 py-8 pt-44 md:py-6 min-h-[768px] flex flex-col md:flex-row items-start md:items-center justify-start md:justify-between gap-8 md:gap-10">
+    <div className="px-6 md:px-20 py-8 md:py-6 min-h-[768px] flex flex-col md:flex-row items-start md:items-center justify-start md:justify-between gap-8 md:gap-10">
       <HeroCarousel />
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-6">
