@@ -1,6 +1,6 @@
 export const Navbar = () => {
   return (
-    <header className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0 md:h-16 px-6 md:px-20 py-8 md:py-0 border-b-neutral-200 border-b-[1px] fixed md:static w-full bg-neutral-100">
+    <header className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0 md:h-16 px-6 md:px-20 py-8 md:py-0 border-b-neutral-200 border-b-[1px] fixed md:static w-full bg-neutral-100 z-50">
       <img src="/roteirizando-logo.svg" alt="Roteirizando" />
       <nav className="w-full md:w-auto">
         <ul className="flex flex-row items-center justify-around gap-6 md:gap-10 w-full">
