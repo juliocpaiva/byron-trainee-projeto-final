@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "./button";
 import { HeroCarousel } from "./hero-carousel";
 
@@ -34,27 +35,35 @@ const HeroImages = () => {
     <div className="hidden md:flex flex-row gap-4 lg:gap-6 lg:h-[768px] relative overflow-hidden">
       <div className="bg-gradient-to-t from-neutral-100 to-transparent to-30% absolute top-0 left-0 w-full h-full z-1"></div>
       <div className="flex flex-col gap-4 lg:gap-6">
-        <img
+        <Image
           className="rounded-2xl w-[302px] lg:h-[330px] object-cover"
           src="/amsterdam.jpg"
           alt="Roteirizando"
+          width={302}
+          height={330}
         />
-        <img
+        <Image
           className="rounded-2xl w-[302px] lg:h-[414px] object-cover"
           src="/italia.jpg"
           alt="Roteirizando"
+          width={302}
+          height={414}
         />
       </div>
       <div className="flex flex-col gap-4 lg:gap-6">
-        <img
+        <Image
           className="rounded-2xl w-[302px] lg:h-[447px] object-cover"
           src="/tokyo-tower.jpg"
           alt="Roteirizando"
+          width={302}
+          height={447}
         />
-        <img
+        <Image
           className="rounded-2xl w-[302px] h-full lg:h-[316px] object-cover"
           src="/machu-pichu.jpg"
           alt="Roteirizando"
+          width={302}
+          height={316}
         />
       </div>
     </div>

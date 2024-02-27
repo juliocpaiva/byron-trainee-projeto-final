@@ -2,6 +2,7 @@
 
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import Image from "next/image";
 
 export const HeroCarousel = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
@@ -16,25 +17,33 @@ export const HeroCarousel = () => {
       ref={emblaRef}
     >
       <div className="embla__container flex h-full w-full gap-4">
-        <img
-          className="embla__slide rounded-2xl h-full w-full object-cover"
+        <Image
+          className="embla__slide rounded-2xl w-auto h-auto object-cover"
           src="/amsterdam.jpg"
           alt="Roteirizando"
+          width={340}
+          height={340}
         />
-        <img
-          className="embla__slide rounded-2xl h-full w-full object-cover"
+        <Image
+          className="embla__slide rounded-2xl w-auto h-auto object-cover"
           src="/italia.jpg"
           alt="Roteirizando"
+          width={340}
+          height={340}
         />
-        <img
-          className="embla__slide rounded-2xl h-full w-full object-cover"
+        <Image
+          className="embla__slide rounded-2xl w-auto h-auto object-cover"
           src="/tokyo-tower.jpg"
           alt="Roteirizando"
+          width={340}
+          height={340}
         />
-        <img
-          className="embla__slide rounded-2xl h-full w-full object-cover mr-4"
+        <Image
+          className="embla__slide rounded-2xl w-auto h-auto object-cover mr-4"
           src="/machu-pichu.jpg"
           alt="Roteirizando"
+          width={340}
+          height={340}
         />
       </div>
     </div>
