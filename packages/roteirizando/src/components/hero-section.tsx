@@ -1,6 +1,10 @@
 import Image from "next/image";
 import { Button } from "./button";
 import { HeroCarousel } from "./hero-carousel";
+import amsterdam from "../../public/amsterdam.jpg";
+import italia from "../../public/italia.jpg";
+import tokyoTower from "../../public/tokyo-tower.jpg";
+import machuPichu from "../../public/machu-pichu.jpg";
 
 export const HeroSection = () => {
   return (
@@ -37,33 +41,33 @@ const HeroImages = () => {
       <div className="flex flex-col gap-4 lg:gap-6">
         <Image
           className="rounded-2xl w-[302px] lg:h-[330px] object-cover"
-          src="/amsterdam.jpg"
+          src={amsterdam}
           alt="Roteirizando"
-          width={302}
-          height={330}
+          placeholder="blur"
+          priority={false}
         />
         <Image
           className="rounded-2xl w-[302px] lg:h-[414px] object-cover"
-          src="/italia.jpg"
+          src={italia}
           alt="Roteirizando"
-          width={302}
-          height={414}
+          placeholder="blur"
+          priority={false}
         />
       </div>
       <div className="flex flex-col gap-4 lg:gap-6">
         <Image
           className="rounded-2xl w-[302px] lg:h-[447px] object-cover"
-          src="/tokyo-tower.jpg"
+          src={tokyoTower}
           alt="Roteirizando"
-          width={302}
-          height={447}
+          placeholder="blur"
+          priority={false}
         />
         <Image
           className="rounded-2xl w-[302px] h-full lg:h-[316px] object-cover"
-          src="/machu-pichu.jpg"
+          src={machuPichu}
           alt="Roteirizando"
-          width={302}
-          height={316}
+          placeholder="blur"
+          priority={false}
         />
       </div>
     </div>

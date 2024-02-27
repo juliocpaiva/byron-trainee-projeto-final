@@ -3,6 +3,10 @@
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
+import amsterdam from "../../public/amsterdam.jpg";
+import italia from "../../public/italia.jpg";
+import tokyoTower from "../../public/tokyo-tower.jpg";
+import machuPichu from "../../public/machu-pichu.jpg";
 
 export const HeroCarousel = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
@@ -19,31 +23,31 @@ export const HeroCarousel = () => {
       <div className="embla__container flex h-full w-full gap-4">
         <Image
           className="embla__slide rounded-2xl w-auto h-auto object-cover"
-          src="/amsterdam.jpg"
+          src={amsterdam}
           alt="Roteirizando"
-          width={340}
-          height={340}
+          placeholder="blur"
+          priority={false}
         />
         <Image
           className="embla__slide rounded-2xl w-auto h-auto object-cover"
-          src="/italia.jpg"
+          src={italia}
           alt="Roteirizando"
-          width={340}
-          height={340}
+          placeholder="blur"
+          priority={false}
         />
         <Image
           className="embla__slide rounded-2xl w-auto h-auto object-cover"
-          src="/tokyo-tower.jpg"
+          src={tokyoTower}
           alt="Roteirizando"
-          width={340}
-          height={340}
+          placeholder="blur"
+          priority={false}
         />
         <Image
           className="embla__slide rounded-2xl w-auto h-auto object-cover mr-4"
-          src="/machu-pichu.jpg"
+          src={machuPichu}
           alt="Roteirizando"
-          width={340}
-          height={340}
+          placeholder="blur"
+          priority={false}
         />
       </div>
     </div>
