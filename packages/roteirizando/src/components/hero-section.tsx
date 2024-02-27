@@ -30,7 +30,7 @@ export const HeroSection = () => {
             alt="Roteirizando"
           />
           <img
-            className="embla__slide rounded-2xl h-full w-full object-cover"
+            className="embla__slide rounded-2xl h-full w-full object-cover mr-4"
             src="/machu-pichu.jpg"
             alt="Roteirizando"
           />
