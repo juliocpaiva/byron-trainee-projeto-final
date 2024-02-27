@@ -1,42 +1,10 @@
-"use client";
-
 import { Button } from "./button";
-import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
+import { HeroCarousel } from "./hero-carousel";
 
 export const HeroSection = () => {
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()]);
-
   return (
     <div className="px-6 md:px-20 py-8 pt-44 md:py-6 min-h-[768px] flex flex-col md:flex-row items-start md:items-center justify-start md:justify-between gap-8 md:gap-10">
-      <div
-        className="embla overflow-hidden md:hidden max-h-[340px] rounded-2xl"
-        ref={emblaRef}
-      >
-        <div className="embla__container flex h-full w-full gap-4">
-          <img
-            className="embla__slide rounded-2xl h-full w-full object-cover"
-            src="/amsterdam.jpg"
-            alt="Roteirizando"
-          />
-          <img
-            className="embla__slide rounded-2xl h-full w-full object-cover"
-            src="/italia.jpg"
-            alt="Roteirizando"
-          />
-          <img
-            className="embla__slide rounded-2xl h-full w-full object-cover"
-            src="/tokyo-tower.jpg"
-            alt="Roteirizando"
-          />
-          <img
-            className="embla__slide rounded-2xl h-full w-full object-cover mr-4"
-            src="/machu-pichu.jpg"
-            alt="Roteirizando"
-          />
-        </div>
-      </div>
-
+      <HeroCarousel />
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-6">
           <h1 className="font-extrabold font-sans text-neutral-900 text-5xl tracking-[-2px] max-w-[628px]">
