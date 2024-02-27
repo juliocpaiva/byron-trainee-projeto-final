@@ -1,3 +1,15 @@
+import { HeroSection } from "@/components/hero-section";
+import { Navbar } from "@/components/navbar";
+import { useFetchItineraries } from "@/utils/hooks/use-fetch-itineraries";
+
 export default function Home() {
-  return <h1>Home</h1>;
+  const { itinieraries, isItinerariesLoading, itinerariesError } =
+    useFetchItineraries();
+
+  return (
+    <>
+      <Navbar />
+      <HeroSection />
+    </>
+  );
 }
