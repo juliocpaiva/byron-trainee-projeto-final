@@ -6,7 +6,7 @@ export const HeroSection = () => {
   return (
     <div className="px-6 md:px-20 py-8 md:py-6 min-h-[768px] flex flex-col md:flex-row items-start md:items-center justify-start md:justify-between gap-8 md:gap-10">
       <HeroCarousel />
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-8 w-full md:w-fit">
         <div className="flex flex-col gap-6">
           <h1 className="font-extrabold font-sans text-neutral-900 text-5xl tracking-[-2px] max-w-[628px]">
             Roteiros de viagem para todos os gostos
