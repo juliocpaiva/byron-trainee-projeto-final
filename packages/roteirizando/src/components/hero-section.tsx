@@ -20,7 +20,7 @@ export const HeroSection = () => {
           variant="CTA"
           type="anchor"
           href="/#itineraries"
-          className="md:w-[212px]"
+          className="md:!w-[212px]"
         >
           Ver roteiros
         </Button>
