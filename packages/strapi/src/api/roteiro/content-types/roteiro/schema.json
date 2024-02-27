@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "roteiros",
+  "info": {
+    "singularName": "roteiro",
+    "pluralName": "roteiros",
+    "displayName": "Roteiro",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Description": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}
