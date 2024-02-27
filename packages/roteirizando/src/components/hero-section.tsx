@@ -44,14 +44,14 @@ const HeroImages = () => {
           src={amsterdam}
           alt="Roteirizando"
           placeholder="blur"
-          priority={false}
+          priority
         />
         <Image
           className="rounded-2xl w-[302px] lg:h-[414px] object-cover"
           src={italia}
           alt="Roteirizando"
           placeholder="blur"
-          priority={false}
+          priority
         />
       </div>
       <div className="flex flex-col gap-4 lg:gap-6">
@@ -60,14 +60,14 @@ const HeroImages = () => {
           src={tokyoTower}
           alt="Roteirizando"
           placeholder="blur"
-          priority={false}
+          priority
         />
         <Image
           className="rounded-2xl w-[302px] h-full lg:h-[316px] object-cover"
           src={machuPichu}
           alt="Roteirizando"
           placeholder="blur"
-          priority={false}
+          priority
         />
       </div>
     </div>

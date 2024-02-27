@@ -26,28 +26,28 @@ export const HeroCarousel = () => {
           src={amsterdam}
           alt="Roteirizando"
           placeholder="blur"
-          priority={false}
+          priority
         />
         <Image
           className="embla__slide rounded-2xl w-auto h-auto object-cover"
           src={italia}
           alt="Roteirizando"
           placeholder="blur"
-          priority={false}
+          priority
         />
         <Image
           className="embla__slide rounded-2xl w-auto h-auto object-cover"
           src={tokyoTower}
           alt="Roteirizando"
           placeholder="blur"
-          priority={false}
+          priority
         />
         <Image
           className="embla__slide rounded-2xl w-auto h-auto object-cover mr-4"
           src={machuPichu}
           alt="Roteirizando"
           placeholder="blur"
-          priority={false}
+          priority
         />
       </div>
     </div>
