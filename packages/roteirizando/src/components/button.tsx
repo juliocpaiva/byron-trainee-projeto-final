@@ -2,6 +2,7 @@ interface ButtonProps {
   variant: "CTA" | "primary" | "secondary";
   type: "button" | "anchor";
   children: React.ReactNode;
+  submit?: boolean;
   href?: string;
   onClick?: () => void;
   className?: string;
@@ -11,9 +12,12 @@ export const Button = (props: ButtonProps) => {
   return props.type === "button" ? (
     <button
       onClick={props.onClick}
+      type={props.submit ? "submit" : "button"}
       className={`${
         props.variant === "secondary"
           ? "bg-neutral-50 h-12 border-[1px] border-neutral-300 rounded-lg text-neutral-700 px-8 py-2 font-sans font-medium text-sm"
+          : props.variant === "primary"
+          ? "bg-yellow-300 h-12 rounded-lg text-neutral-800 font-medium text-sm px-8 py-2 font-sans"
           : null
       } ${props.className} hover:brightness-90 transition-all duration-200`}
     >

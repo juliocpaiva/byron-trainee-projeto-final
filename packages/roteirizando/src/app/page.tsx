@@ -1,14 +1,13 @@
 import { HeroSection } from "@/components/hero-section";
 import { Itineraries } from "@/components/itineraries";
-import { Navbar } from "@/components/navbar";
+import { NewsletterSection } from "@/components/newsletter-section";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
       <HeroSection />
       <Itineraries />
-      <div className="mt-24"></div>
+      <NewsletterSection />
     </>
   );
 }
