@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "last_newsletter_sents",
+  "info": {
+    "singularName": "last-newsletter-sent",
+    "pluralName": "last-newsletter-sents",
+    "displayName": "LastNewsletterSent"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "newsletterId": {
+      "type": "integer",
+      "required": true,
+      "private": true
+    }
+  }
+}

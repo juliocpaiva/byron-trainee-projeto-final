@@ -783,6 +783,36 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiLastNewsletterSentLastNewsletterSent
+  extends Schema.SingleType {
+  collectionName: 'last_newsletter_sents';
+  info: {
+    singularName: 'last-newsletter-sent';
+    pluralName: 'last-newsletter-sents';
+    displayName: 'LastNewsletterSent';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    newsletterId: Attribute.Integer & Attribute.Required & Attribute.Private;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::last-newsletter-sent.last-newsletter-sent',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::last-newsletter-sent.last-newsletter-sent',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiNewsletterNewsletter extends Schema.CollectionType {
   collectionName: 'newsletters';
   info: {
@@ -852,6 +882,36 @@ export interface ApiRoteiroRoteiro extends Schema.CollectionType {
   };
 }
 
+export interface ApiSubscriberSubscriber extends Schema.CollectionType {
+  collectionName: 'subscribers';
+  info: {
+    singularName: 'subscriber';
+    pluralName: 'subscribers';
+    displayName: 'Subscriber';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    email: Attribute.Email;
+    identifier: Attribute.String & Attribute.Private & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::subscriber.subscriber',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::subscriber.subscriber',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -870,8 +930,10 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::last-newsletter-sent.last-newsletter-sent': ApiLastNewsletterSentLastNewsletterSent;
       'api::newsletter.newsletter': ApiNewsletterNewsletter;
       'api::roteiro.roteiro': ApiRoteiroRoteiro;
+      'api::subscriber.subscriber': ApiSubscriberSubscriber;
     }
   }
 }
