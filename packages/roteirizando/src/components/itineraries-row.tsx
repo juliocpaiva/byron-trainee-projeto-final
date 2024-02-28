@@ -6,11 +6,14 @@ interface Props {
 }
 
 export const ItinerariesRow = (props: Props) => {
-  const { itineraries, isLoading } = useFetchItineraries(props.page, 3);
+  const { itineraries, isLoading, isError } = useFetchItineraries(
+    props.page,
+    3
+  );
 
   return (
     <>
-      {isLoading && <Skeleton />}
+      {(isLoading || isError) && <Skeleton />}
       {itineraries?.data?.length! > 0 && (
         <div className="flex gap-6 flex-wrap h-fit w-full">
           {itineraries?.data.map((itinerary) => {
