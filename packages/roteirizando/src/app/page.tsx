@@ -1,15 +1,14 @@
 import { HeroSection } from "@/components/hero-section";
+import { Itineraries } from "@/components/itineraries";
 import { Navbar } from "@/components/navbar";
-import { useFetchItineraries } from "@/utils/hooks/use-fetch-itineraries";
 
 export default function Home() {
-  const { itinieraries, isItinerariesLoading, itinerariesError } =
-    useFetchItineraries();
-
   return (
     <>
       <Navbar />
       <HeroSection />
+      <Itineraries />
+      <div className="mt-24"></div>
     </>
   );
 }

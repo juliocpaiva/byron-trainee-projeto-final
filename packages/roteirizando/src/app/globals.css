@@ -5,3 +5,7 @@
 body {
   @apply bg-neutral-100;
 }
+
+html {
+  @apply scroll-smooth;
+}

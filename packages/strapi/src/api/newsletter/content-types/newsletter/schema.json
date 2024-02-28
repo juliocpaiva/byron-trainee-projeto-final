@@ -12,10 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "main": {
-      "type": "text",
-      "required": true
-    },
     "image": {
       "type": "media",
       "multiple": true,
@@ -24,8 +20,16 @@
         "images"
       ]
     },
-    "Description": {
-      "type": "blocks",
+    "content": {
+      "type": "richtext"
+    },
+    "sent": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "subject": {
+      "type": "string",
       "required": true
     }
   }

@@ -19,13 +19,21 @@
     "media": {
       "type": "media",
       "multiple": true,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
     },
-    "Description": {
-      "type": "blocks",
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "shortDescription": {
+      "type": "text",
       "required": true
     }
   }
