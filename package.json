@@ -2,25 +2,24 @@
   "name": "projeto-final",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev:roteirizando": "npm run dev -w roteirizando",
-    "dev:roteirizando-emails": "npm run dev -w roteirizando-emails",
-    "dev:strapi": "npm run develop -w strapi",
-    "build:roteirizando": "npm run build -w roteirizando",
-    "build:strapi": "npm run build -w strapi",
-    "start:roteirizando": "npm run start -w roteirizando",
-    "start:strapi": "npm run start -w strapi",
-    "lint:roteirizando": "npm run lint -w roteirizando",
-    "strapi": "npm run strapi -w strapi"
-  },
   "keywords": [],
-  "author": "",
   "license": "ISC",
+  "author": "",
+  "main": "index.js",
   "workspaces": [
     "packages/*",
     "packages/roteirizando",
-    "packages/roteirizando-emails",
     "packages/strapi"
-  ]
+  ],
+  "scripts": {
+    "build:roteirizando": "npm run build -w roteirizando",
+    "build:strapi": "npm run build -w strapi",
+    "dev:roteirizando": "npm run dev -w roteirizando",
+    "dev:roteirizando-emails": "npm run dev -w roteirizando-emails",
+    "dev:strapi": "npm run develop -w strapi",
+    "lint:roteirizando": "npm run lint -w roteirizando",
+    "start:roteirizando": "npm run start -w roteirizando",
+    "start:strapi": "npm run start -w strapi",
+    "strapi": "npm run strapi -w strapi"
+  }
 }
