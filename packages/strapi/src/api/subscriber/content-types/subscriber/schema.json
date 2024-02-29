@@ -4,7 +4,8 @@
   "info": {
     "singularName": "subscriber",
     "pluralName": "subscribers",
-    "displayName": "Subscriber"
+    "displayName": "Subscriber",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -12,12 +13,12 @@
   "pluginOptions": {},
   "attributes": {
     "email": {
-      "type": "email"
+      "type": "email",
+      "unique": true
     },
     "identifier": {
       "type": "string",
-      "unique": true,
-      "private": true
+      "unique": true
     }
   }
 }

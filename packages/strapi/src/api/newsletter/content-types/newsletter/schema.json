@@ -12,14 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "image": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "content": {
       "type": "richtext"
     },
@@ -31,6 +23,9 @@
     "subject": {
       "type": "string",
       "required": true
+    },
+    "sentAt": {
+      "type": "datetime"
     }
   }
 }

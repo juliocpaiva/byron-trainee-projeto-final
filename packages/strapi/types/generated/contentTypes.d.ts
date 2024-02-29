@@ -585,6 +585,53 @@ export interface PluginContentReleasesReleaseAction
   };
 }
 
+export interface PluginI18NLocale extends Schema.CollectionType {
+  collectionName: 'i18n_locale';
+  info: {
+    singularName: 'locale';
+    pluralName: 'locales';
+    collectionName: 'locales';
+    displayName: 'Locale';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+          max: 50;
+        },
+        number
+      >;
+    code: Attribute.String & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::i18n.locale',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::i18n.locale',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUsersPermissionsPermission
   extends Schema.CollectionType {
   collectionName: 'up_permissions';
@@ -736,83 +783,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface PluginI18NLocale extends Schema.CollectionType {
-  collectionName: 'i18n_locale';
-  info: {
-    singularName: 'locale';
-    pluralName: 'locales';
-    collectionName: 'locales';
-    displayName: 'Locale';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    name: Attribute.String &
-      Attribute.SetMinMax<
-        {
-          min: 1;
-          max: 50;
-        },
-        number
-      >;
-    code: Attribute.String & Attribute.Unique;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'plugin::i18n.locale',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'plugin::i18n.locale',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiLastNewsletterSentLastNewsletterSent
-  extends Schema.SingleType {
-  collectionName: 'last_newsletter_sents';
-  info: {
-    singularName: 'last-newsletter-sent';
-    pluralName: 'last-newsletter-sents';
-    displayName: 'LastNewsletterSent';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    newsletterId: Attribute.Integer & Attribute.Required & Attribute.Private;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::last-newsletter-sent.last-newsletter-sent',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::last-newsletter-sent.last-newsletter-sent',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiNewsletterNewsletter extends Schema.CollectionType {
   collectionName: 'newsletters';
   info: {
@@ -825,10 +795,10 @@ export interface ApiNewsletterNewsletter extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    image: Attribute.Media;
     content: Attribute.RichText;
     sent: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
     subject: Attribute.String & Attribute.Required;
+    sentAt: Attribute.DateTime;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -888,13 +858,14 @@ export interface ApiSubscriberSubscriber extends Schema.CollectionType {
     singularName: 'subscriber';
     pluralName: 'subscribers';
     displayName: 'Subscriber';
+    description: '';
   };
   options: {
     draftAndPublish: false;
   };
   attributes: {
-    email: Attribute.Email;
-    identifier: Attribute.String & Attribute.Private & Attribute.Unique;
+    email: Attribute.Email & Attribute.Unique;
+    identifier: Attribute.String & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -926,11 +897,10 @@ declare module '@strapi/types' {
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
+      'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'plugin::i18n.locale': PluginI18NLocale;
-      'api::last-newsletter-sent.last-newsletter-sent': ApiLastNewsletterSentLastNewsletterSent;
       'api::newsletter.newsletter': ApiNewsletterNewsletter;
       'api::roteiro.roteiro': ApiRoteiroRoteiro;
       'api::subscriber.subscriber': ApiSubscriberSubscriber;
