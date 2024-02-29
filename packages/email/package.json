@@ -1,0 +1,15 @@
+{
+  "name": "email",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "main": "index.js",
+  "scripts": {
+    "compile": "mjml ${npm_config_mjml} -o ${npm_config_output}"
+  },
+  "dependencies": {
+    "mjml": "^4.15.3"
+  }
+}

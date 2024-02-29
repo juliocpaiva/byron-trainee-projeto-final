@@ -1,0 +1,123 @@
+<mjml>
+  <mj-head>
+    <mj-title></mj-title>
+    <mj-attributes>
+
+    </mj-attributes>
+    <mj-style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+
+      a {
+        font-style: italic;
+        text-decoration: underline;
+      }
+
+      a:hover {
+        color: #363636;
+      }
+
+      .markdown {
+        font-family: 'Inter', sans-serif;
+      }
+
+      .markdown h1 {
+        font-size: 28px;
+        color: #171717;
+        font-weight: bold;
+        margin: 12px 0;
+        padding: 0;
+      }
+
+      .markdown h2 {
+        font-size: 24px;
+        color: #171717;
+        font-weight: bold;
+        margin: 12px 0;
+        padding: 0;
+      }
+
+      .markdown h3 {
+        font-size: 20px;
+        color: #171717;
+        font-weight: bold;
+        margin: 12px 0;
+        padding: 0;
+      }
+
+      .markdown h4 {
+        font-size: 18px;
+        color: #171717;
+        font-weight: bold;
+        margin: 12px 0;
+        padding: 0;
+      }
+
+      .markdown h5 {
+        font-size: 16px;
+        color: #171717;
+        font-weight: bold;
+        margin: 12px 0;
+        padding: 0;
+      }
+
+      .markdown h6 {
+        font-size: 14px;
+        color: #171717;
+        font-weight: bold;
+        margin: 12px 0;
+        padding: 0;
+      }
+
+      .markdown strong {
+        font-weight: bold;
+      }
+
+      .markdown b {
+        font-weight: bold;
+      }
+
+      .markdown em {
+        font-style: italic;
+      }
+
+      .markdown p,
+      li,
+      a {
+        font-size: 16px;
+        color: #171717;
+        margin: 8px 0;
+        padding: 0;
+      }
+
+      .markdown a {
+        font-style: italic;
+        text-decoration: underline;
+      }
+
+      .markdown a:hover {
+        color: #363636;
+      }
+    </mj-style>
+    <mj-font name="Inter" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" />
+  </mj-head>
+  <mj-body>
+    <mj-section>
+      <mj-column css-class="markdown">
+        <mj-raw>
+          <%= newsletter.content %>
+        </mj-raw>
+      </mj-column>
+    </mj-section>
+    <mj-section>
+      <mj-column>
+        <mj-text>
+          <a href="<%= newsletter.unsubscribeUrl %>" style="text-align: center; width: 100%; display:inline-block">
+            Cancelar inscrição
+          </a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

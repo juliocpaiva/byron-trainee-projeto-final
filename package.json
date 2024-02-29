@@ -8,6 +8,7 @@
   "main": "index.js",
   "workspaces": [
     "packages/*",
+    "packages/email",
     "packages/roteirizando",
     "packages/strapi"
   ],

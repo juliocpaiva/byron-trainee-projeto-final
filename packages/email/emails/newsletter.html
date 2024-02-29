@@ -1,39 +1,4 @@
-const markdownit = require("markdown-it");
-const md = markdownit();
-
-module.exports = {
-  sendNewsletter: {
-    task: async ({ strapi }) => {
-      const subscribers = await strapi.entityService.findMany(
-        "api::subscriber.subscriber",
-        {
-          fields: ["email", "identifier"],
-        }
-      );
-
-      const newsletter = await strapi.entityService.findMany(
-        "api::newsletter.newsletter",
-        {
-          sort: { createdAt: "ASC" },
-          filters: { sent: false },
-          populate: {
-            image: true,
-          },
-          fields: ["id", "subject", "content", "sent", "sentAt"],
-        }
-      );
-
-      if (newsletter.length === 0) {
-        strapi.log.info("No newsletter to send");
-        return;
-      }
-
-      const emailTemplate = {
-        subject: "<%= newsletter.subject %>",
-        text: `<%= newsletter.content %>
-        <%= newsletter.unsubscribeUrl %>
-        `,
-        html: `<!doctype html>
+<!doctype html>
 <html lang="und" dir="auto" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 
 <head>
@@ -262,44 +227,4 @@ module.exports = {
   </div>
 </body>
 
-</html>`,
-      };
-
-      const sentAt = new Date();
-
-      for (const subscriber of subscribers) {
-        await strapi.plugins["email"].services.email.sendTemplatedEmail(
-          {
-            to: subscriber.email,
-          },
-          emailTemplate,
-          {
-            newsletter: {
-              subject: newsletter[0].subject,
-              content: md.render(newsletter[0].content),
-              unsubscribeUrl:
-                process.env.FRONTEND_URI +
-                `/newsletter/unsubscribe?email=${subscriber.email}&identifier=${subscriber.identifier}`,
-            },
-          }
-        );
-      }
-
-      await strapi.entityService.update(
-        "api::newsletter.newsletter",
-        newsletter[0].id,
-        {
-          data: {
-            sent: true,
-            sentAt,
-          },
-        }
-      );
-
-      strapi.log.info(`Newsletter of id ${newsletter[0].id} sent at ${sentAt}`);
-    },
-    options: {
-      rule: "0 0 8 * * *",
-    },
-  },
-};
+</html>
