@@ -1,11 +1,11 @@
 import { NewsletterSection } from "@/components/newsletter-section"
 
-export default function unsubscribe({ params }: { params: { id: string } }) {
+export default function desinscrever({ params }: { params: { id: string } }) {
   return(
   <section>
 <div className="flex flex-col gap-16">
 <div className="flex flex-col gap-5"> 
- <p> className="text-4xl font-bold max-w-7xl" Você quer cancelar sua inscrição? 
+ <p className="text-4xl font-bold max-w-7xl">  Você quer cancelar sua inscrição? 
   Sentiremos sua falta :(
  </p>
 </div>
@@ -18,4 +18,4 @@ export default function unsubscribe({ params }: { params: { id: string } }) {
 
 }
 
-export default unsubscribe;
+export default desinscrever;
